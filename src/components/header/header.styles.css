@@ -1,0 +1,43 @@
+.nav__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__container .nav__logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.nav__container .nav__logo:hover, .nav__container .nav__logo:focus, .nav__container .nav__logo:visited {
+  color: black;
+}
+
+.nav__container .nav__list {
+  list-style: none;
+  margin: 0;
+  margin-left: auto;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__container .nav__list .nav__list__item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1rem;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+
+.nav__container .nav__list .nav__list__item:hover, .nav__container .nav__list .nav__list__item:focus, .nav__container .nav__list .nav__list__item:visited {
+  color: black;
+}
+/*# sourceMappingURL=header.styles.css.map */

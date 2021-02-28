@@ -1,0 +1,20 @@
+.cart__container {
+  margin-left: auto;
+  cursor: pointer;
+  width: 30px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.cart__container .cart__count {
+  position: absolute;
+  top: -9px;
+  right: 3px;
+  background: crimson;
+  font-size: 10px;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 50%;
+  z-index: -1;
+}
+/*# sourceMappingURL=cart.styles.css.map */
