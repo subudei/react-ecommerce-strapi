@@ -1,0 +1,132 @@
+// .product__card_container {
+//   border: 1px solid rgba(0, 0, 0, 0.125);
+//   padding: 1rem;
+//   margin: 1rem 0;
+
+//   .pc__image {
+//     width: 400px;
+//   }
+// }
+
+.card__one__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
+  .card__one {
+    position: relative;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+
+    .circle__one {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #d83133;
+        clip-path: circle(120px at center);
+        transition: 0.5s;
+      }
+    }
+    &:hover .circle__one:before {
+      background: #0065c3;
+      clip-path: circle(400px at center);
+    }
+    .card__one__img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 300px;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+    &:hover .card__one__img {
+      left: 72%;
+      height: 500px;
+    }
+    .card__one__content {
+      position: relative;
+      width: 50%;
+      left: 20%;
+      padding: 20px 20px 20px 40px;
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+
+      h2 {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        // line-height: 1rem;
+      }
+
+      p {
+        color: #fff;
+      }
+      .card__one__btn {
+        position: relative;
+        color: #111;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #fff;
+        margin-top: 10px;
+        display: inline-block;
+        font-weight: 700;
+      }
+    }
+    &:hover .card__one__content {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .card__one {
+      width: auto;
+      max-width: 350px;
+      align-items: flex-start;
+      margin: 10px;
+
+      &:hover {
+        height: 600px;
+      }
+
+      .card__one__content {
+        width: 100%;
+        left: 0;
+        padding: 30px;
+      }
+
+      &:hover .card__one__img {
+        top: 70%;
+        left: 50%;
+        height: 300px;
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    .card__one__content {
+      padding: 20px;
+    }
+  }
+}

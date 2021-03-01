@@ -1,8 +1,52 @@
-.main__section__image {
-  width: 200px;
+.main__section__container {
+  width: 70%;
+  margin: 3rem auto;
 }
 
-.main__section__image .ms__img {
-  width: 200px;
+.main__section__container .main__section__middle .main__section__image {
+  margin: auto;
+}
+
+.main__section__container .main__section__middle .main__section__image .ms__img {
+  margin: auto;
+  width: 80vw;
+}
+
+.main__section__container .main__section__middle .main__section__description .ms__title {
+  font-size: 1.1rem;
+}
+
+.main__section__container .main__section__middle .main__section__description .ms__p__tag {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .main__section__container .main__section__middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main__section__container .main__section__middle .ms__img {
+    max-width: 545px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 545px;
+            flex: 1 0 545px;
+  }
+  .main__section__container .main__section__middle .main__section__description {
+    margin-left: 30px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .main__section__container .main__section__middle .main__section__description .ms__title {
+    font-size: 1.5rem;
+  }
+  .main__section__container .main__section__middle .main__section__description .ms__p__tag {
+    font-size: 1.1rem;
+  }
 }
 /*# sourceMappingURL=mainSection.styles.css.map */

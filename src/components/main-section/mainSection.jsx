@@ -12,7 +12,11 @@ function MainSection({ history }) {
           <img src={Boxing10} alt="studio bag" className="ms__img" />
         </div>
         <div className="main__section__description">
-          <h2>Sport bla bla bla</h2>
+          <h2 className="ms__title">Sport bla bla bla</h2>
+          <p className="ms__p__tag">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+            culpa?
+          </p>
           <button onClick={() => history.push("/product/1")}>BAG</button>
         </div>
       </div>
