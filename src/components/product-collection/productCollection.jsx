@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import "./productCollections.styles.css";
 
-import { ProductsContext } from "../../context/products-context";
+import { useProduct } from "../../context/products-context";
 import ProductCard from "../product-card/productCard";
 
 function ProductCollection() {
-  const { products } = useContext(ProductsContext);
+  const { products } = useProduct();
   const productItems = products
     .filter((product, i) => i < 4)
     .map((product) => <ProductCard {...product} key={product.id} />);

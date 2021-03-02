@@ -1,0 +1,25 @@
+.product__list__container {
+  margin: 3rem 0;
+
+  .product__list__title {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .product__list {
+    margin: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .product__list__container {
+    .product__list {
+      justify-content: center;
+      align-items: center;
+      margin: 0 5rem;
+      flex: 0 0 300px;
+    }
+  }
+}
