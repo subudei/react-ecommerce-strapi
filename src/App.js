@@ -1,16 +1,16 @@
+import { Switch, Route } from "react-router-dom";
+import HomePage from "./components/homepage/homepage";
+
 import "./App.css";
-import Header from "./components/header/header";
-import Hero from "./components/hero/hero";
-import MainSection from "./components/main-section/mainSection";
-import ProductCollection from "./components/product-collection/productCollection";
+import Page404 from "./components/404-page/page404";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <MainSection />
-      <ProductCollection />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="*" component={Page404} />
+      </Switch>
     </div>
   );
 }

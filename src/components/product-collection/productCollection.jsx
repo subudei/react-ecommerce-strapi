@@ -11,7 +11,7 @@ function ProductCollection() {
     .map((product) => <ProductCard {...product} key={product.id} />);
   return (
     <div className="collection__container">
-      <h2 className="collection__title">Product Collections</h2>
+      {/* <h2 className="collection__title">Product Collections</h2> */}
       <div className="collection__products">{productItems}</div>
     </div>
   );

@@ -9,6 +9,8 @@
       -ms-flex-align: center;
           align-items: center;
   min-height: 80vh;
+  width: 40vw;
+  margin: auto;
 }
 
 .card__one__container .card__one {

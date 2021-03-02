@@ -8,7 +8,7 @@ function Header() {
     <div className="nav__container">
       <div>
         <Link className="nav__logo" to="/">
-          SHOP
+          PRO BOXING GEAR STORE
         </Link>
       </div>
       <ul className="nav__list">
