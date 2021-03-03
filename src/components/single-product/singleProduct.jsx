@@ -1,44 +1,55 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import {
-  useProduct,
-  useState,
-  useEffect,
-} from "../../context/products-context";
+import React, { useState, useEffect } from "react";
+import "./singleProduct.styles.css";
+
+import { useParams, useHistory } from "react-router-dom";
+import { useProduct } from "../../context/products-context";
+
 import Layout from "../layout/layout";
 
-function SingleProduct({ match, history: { push } }) {
+function SingleProduct() {
   const { products } = useProduct();
-  const { id } = match.params;
+  const { id } = useParams();
+  const history = useHistory();
   const [product, setProduct] = useState(null);
+
   useEffect(() => {
     const product = products.find((item) => Number(item.id) === Number(id));
     if (!product) {
-      return push("/shop");
+      return history.push("/shop");
+      // return history.goBack();
     }
     setProduct(product);
-  }, []);
+  }, [id, product, products]);
+
+  if (!product) {
+    return null;
+  }
   const { imageUrl, title, description, price } = product;
   return (
     <Layout>
-      <div>
-        <div>
-          <img src={imageUrl} alt="product" />
+      <div className="single__product__container">
+        <div className="single__product__image__div">
+          <img
+            src={imageUrl}
+            alt="product"
+            className="single__product__image"
+          />
         </div>
-        <div>
-          <div>
-            <h3>{title}</h3>
-            <p>{price}</p>
+        <div className="single__product__details">
+          <div className="single__product__name_price">
+            <h1>{title}</h1>
+            <h3>$ {price}</h3>
           </div>
-          <div>
-            <button>ADD TO CART</button>
-            <button>PROCIDE TO CHECKOUT</button>
+          <div className="single__product__buttons">
+            <button className="sp__btn">ADD TO CART</button>
+            <button className="sp__btn">PROCIDE TO CHECKOUT</button>
           </div>
-          <div>{description}</div>
+          <div className="single__product__description">{description}</div>
         </div>
       </div>
     </Layout>
   );
 }
 
+// export default withRouter(SingleProduct);
 export default SingleProduct;

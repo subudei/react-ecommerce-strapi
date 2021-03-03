@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./shopPage.styles.css";
 
 import { useProduct } from "../../context/products-context";

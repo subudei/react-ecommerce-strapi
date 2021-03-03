@@ -1,11 +1,15 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 // import "./productCard.styles.css";
 import "./productCard.style2.css";
 
-function ProductCard(product) {
-  const { title, imageUrl, price, description } = product;
+function ProductCard(props) {
+  const { title, imageUrl, price, description, history, id } = props;
   return (
-    <div className="card__one__container">
+    <div
+      className="card__one__container"
+      onClick={() => history.push(`/product/${id}`)}
+    >
       <div className="card__one">
         {/* <div className="circle__one" /> */}
         <img className="card__one__img" src={imageUrl} alt="product" />
@@ -21,4 +25,4 @@ function ProductCard(product) {
   );
 }
 
-export default ProductCard;
+export default withRouter(ProductCard);
