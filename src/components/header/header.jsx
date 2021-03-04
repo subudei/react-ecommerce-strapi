@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.styles.css";
 import { Link } from "react-router-dom";
-import Cart from "../cart/cart";
+import CartIcon from "../cart-icon/cartIcon.jsx";
 
 function Header() {
   return (
@@ -23,7 +23,7 @@ function Header() {
           </Link>
         </li>
       </ul>
-      <Cart />
+      <CartIcon />
     </div>
   );
 }

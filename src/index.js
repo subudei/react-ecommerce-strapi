@@ -5,16 +5,17 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitalis from "./reportWebVitals";
 import ProductsContextProvider from "./context/products-context";
+import CartContextProvider from "./context/cart-context";
 
 ReactDOM.render(
   <BrowserRouter>
-    <ProductsContextProvider>
-      <App />
-    </ProductsContextProvider>
+    <CartContextProvider>
+      <ProductsContextProvider>
+        <App />
+      </ProductsContextProvider>
+    </CartContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
 
 reportWebVitalis();
-
-// 58:00

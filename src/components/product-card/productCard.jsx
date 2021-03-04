@@ -1,10 +1,11 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 // import "./productCard.styles.css";
 import "./productCard.style2.css";
 
 function ProductCard(props) {
-  const { title, imageUrl, price, description, history, id } = props;
+  const { title, imageUrl, price, description, id } = props;
+  const history = useHistory();
   return (
     <div
       className="card__one__container"
@@ -25,4 +26,5 @@ function ProductCard(props) {
   );
 }
 
-export default withRouter(ProductCard);
+// export default withRouter(ProductCard);
+export default ProductCard;

@@ -19,7 +19,7 @@ function SingleProduct() {
       // return history.goBack();
     }
     setProduct(product);
-  }, [id, product, products]);
+  }, [id, product, products, history]);
 
   if (!product) {
     return null;
