@@ -3,11 +3,14 @@ import "./singleProduct.styles.css";
 
 import { useParams, useHistory } from "react-router-dom";
 import { useProduct } from "../../context/products-context";
+import { useCart } from "../../context/cart-context";
+import { isInCart } from "../../helpers";
 
 import Layout from "../layout/layout";
 
 function SingleProduct() {
   const { products } = useProduct();
+  const { addProduct, cartItems, increase } = useCart();
   const { id } = useParams();
   const history = useHistory();
   const [product, setProduct] = useState(null);
@@ -41,7 +44,16 @@ function SingleProduct() {
             <h3>$ {price}</h3>
           </div>
           <div className="single__product__buttons">
-            <button className="sp__btn">ADD TO CART</button>
+            {!isInCart(product, cartItems) ? (
+              <button onClick={() => addProduct(product)} className="sp__btn">
+                ADD TO CART
+              </button>
+            ) : (
+              <button onClick={() => increase(product)} className="sp__btn">
+                ADD MORE
+              </button>
+            )}
+
             <button className="sp__btn">PROCIDE TO CHECKOUT</button>
           </div>
           <div className="single__product__description">{description}</div>

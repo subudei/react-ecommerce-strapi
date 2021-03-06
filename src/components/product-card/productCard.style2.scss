@@ -30,12 +30,21 @@
     margin: auto;
     margin-top: 2rem;
     padding: 0 1rem;
+    cursor: default;
 
     .card__one__btn {
       font-size: 1.5rem;
       padding: 0.5rem 2rem;
       background: black;
       color: white;
+      cursor: pointer;
+    }
+    .card__one__btn__white {
+      font-size: 1.5rem;
+      padding: 0.5rem 2rem;
+      background: white;
+      color: black;
+      cursor: pointer;
     }
   }
 }

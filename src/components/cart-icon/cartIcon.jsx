@@ -5,15 +5,16 @@ import { useCart } from "../../context/cart-context";
 import { FaShoppingCart } from "react-icons/fa";
 
 function CartIcon() {
-  const { itemCount } = useCart();
+  const { itemCount, cartItems } = useCart();
+  console.log("cartItems:", cartItems);
 
   return (
     <div className="cart__container">
-      {itemCount > 0 ? (
+      {/* {itemCount > 0 ? ( */}
         <span className="cart__count">{itemCount} </span>
-      ) : (
+      {/* ) : (
         <span className="cart__count"> 0 </span>
-      )}
+      )} */}
 
       <FaShoppingCart />
     </div>

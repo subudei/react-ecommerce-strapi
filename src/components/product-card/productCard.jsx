@@ -1,17 +1,18 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useCart } from "../../context/cart-context";
+import { isInCart } from "../../helpers";
 // import "./productCard.styles.css";
 import "./productCard.style2.css";
 
 function ProductCard(props) {
   const { title, imageUrl, price, description, id } = props;
   const history = useHistory();
+  const product = { title, imageUrl, price, description, id };
+  const { addProduct, cartItems } = useCart();
   return (
-    <div
-      className="card__one__container"
-      onClick={() => history.push(`/product/${id}`)}
-    >
-      <div className="card__one">
+    <div className="card__one__container">
+      <div className="card__one" onClick={() => history.push(`/product/${id}`)}>
         {/* <div className="circle__one" /> */}
         <img className="card__one__img" src={imageUrl} alt="product" />
       </div>
@@ -19,7 +20,18 @@ function ProductCard(props) {
         <h2>{title}</h2>
         <p>{description}</p>
         <h4>$ {price}</h4>
-        <button className="card__one__btn">Buy Now</button>
+        {!isInCart(product, cartItems) ? (
+          <button
+            className="card__one__btn"
+            onClick={() => addProduct(product)}
+          >
+            ADD TO CART
+          </button>
+        ) : (
+          <button className="card__one__btn__white" onClick={() => {}}>
+            ADD MORE
+          </button>
+        )}
       </div>
       {/* <img className="card__one__img" src={imageUrl} alt="product" /> */}
     </div>
