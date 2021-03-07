@@ -14,6 +14,7 @@ function SingleProduct() {
   const { id } = useParams();
   const history = useHistory();
   const [product, setProduct] = useState(null);
+  const productInCart = isInCart(product, cartItems);
 
   useEffect(() => {
     const product = products.find((item) => Number(item.id) === Number(id));
@@ -44,7 +45,7 @@ function SingleProduct() {
             <h3>$ {price}</h3>
           </div>
           <div className="single__product__buttons">
-            {!isInCart(product, cartItems) ? (
+            {!productInCart ? (
               <button onClick={() => addProduct(product)} className="sp__btn">
                 ADD TO CART
               </button>
@@ -65,3 +66,5 @@ function SingleProduct() {
 
 // export default withRouter(SingleProduct);
 export default SingleProduct;
+
+// 2:51

@@ -7,9 +7,11 @@ import "./productCard.style2.css";
 
 function ProductCard(props) {
   const { title, imageUrl, price, description, id } = props;
-  const history = useHistory();
   const product = { title, imageUrl, price, description, id };
-  const { addProduct, cartItems } = useCart();
+  const history = useHistory();
+
+  const { addProduct, cartItems, increase } = useCart();
+  const productInCart = isInCart(product, cartItems);
   return (
     <div className="card__one__container">
       <div className="card__one" onClick={() => history.push(`/product/${id}`)}>
@@ -20,7 +22,7 @@ function ProductCard(props) {
         <h2>{title}</h2>
         <p>{description}</p>
         <h4>$ {price}</h4>
-        {!isInCart(product, cartItems) ? (
+        {!productInCart ? (
           <button
             className="card__one__btn"
             onClick={() => addProduct(product)}
@@ -28,7 +30,12 @@ function ProductCard(props) {
             ADD TO CART
           </button>
         ) : (
-          <button className="card__one__btn__white" onClick={() => {}}>
+          <button
+            className="card__one__btn__white"
+            onClick={() => {
+              increase(product);
+            }}
+          >
             ADD MORE
           </button>
         )}

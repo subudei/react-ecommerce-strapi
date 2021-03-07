@@ -9,7 +9,6 @@
 
 .product__list__container .product__list {
   margin: 1rem;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
