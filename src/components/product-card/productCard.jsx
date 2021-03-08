@@ -14,7 +14,10 @@ function ProductCard(props) {
   const productInCart = isInCart(product, cartItems);
   return (
     <div className="card__one__container">
-      <div className="card__one" onClick={() => history.push(`/product/${id}`)}>
+      <div
+        className="card__one"
+        //  onClick={() => history.push(`/product/${id}`)}
+      >
         {/* <div className="circle__one" /> */}
         <img className="card__one__img" src={imageUrl} alt="product" />
       </div>

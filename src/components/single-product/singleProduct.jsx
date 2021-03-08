@@ -23,7 +23,7 @@ function SingleProduct() {
       // return history.goBack();
     }
     setProduct(product);
-  }, [id, product, products, history]);
+  }, [id, product, products, history, id]);
 
   if (!product) {
     return null;
@@ -64,7 +64,4 @@ function SingleProduct() {
   );
 }
 
-// export default withRouter(SingleProduct);
 export default SingleProduct;
-
-// 2:51
